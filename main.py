@@ -15,6 +15,7 @@ OUTPUT_PATH = Path("/output/entry.txt")
 def main() -> None:
     """Write the one-liner to /output/entry.txt with no trailing newline."""
     assert 1 <= len(JOKE) <= 200, "entry must be 1-200 characters"
+    assert "\n" not in JOKE, "entry must be a single line"
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(JOKE, encoding="utf-8")
 
